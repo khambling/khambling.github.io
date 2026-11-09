@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Back to your solar planner</title>
+<script>
+// Tesla brings you here after you sign in. This page passes Tesla's one-time sign-in code straight on to your planner
+// at home, which swaps it for a read-only token. The code is useless to anyone else: it works once, only with your
+// app's secret (which only your Pi has), and only for a sign-in your Pi started.
+var PLANNER = 'http://planner.lan:8765';   // your planner's address at home: change it if yours is different
+if (/[?&](code|error)=/.test(location.search)) location.replace(PLANNER + '/tesla/callback' + location.search);
+</script>
+<style>body{font-family:system-ui,sans-serif;max-width:34em;margin:3em auto;padding:0 1em;line-height:1.5;color:#17222e}code{word-break:break-all}</style>
+</head>
+<body>
+<h1 style="font-size:1.3em">Taking you back to your solar planner…</h1>
+<p>If nothing happens (for example because you're not at home), copy the whole address of this page and paste it into the planner: <b>Settings › Home battery › Tesla didn't bring you back here?</b></p>
+<p>This page is part of your own solar planner's Tesla connection. It keeps nothing and sends nothing anywhere else.</p>
+</body>
+</html>
